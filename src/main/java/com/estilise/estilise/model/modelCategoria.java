@@ -1,6 +1,7 @@
 package com.estilise.estilise.model;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,8 +28,8 @@ public class modelCategoria {
 	@NotNull
 	private byte[] imagem_categoria;
 	
-	@ManyToOne
-	@JoinColumn(name="id_produto")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_produto", referencedColumnName="id_produto")
 	private modelProduto id_produto;
 	
 	public long getId_categoria() {

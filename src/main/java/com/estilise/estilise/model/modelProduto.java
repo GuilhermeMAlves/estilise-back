@@ -2,6 +2,7 @@ package com.estilise.estilise.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,7 +40,7 @@ public class modelProduto {
 	private String tamanho;
 	
 	@NotNull
-	private String categoria;
+	private String keytag;
 	
 	@NotNull
 	private byte[] imagem1;
@@ -50,13 +51,17 @@ public class modelProduto {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data= new java.sql.Date(System.currentTimeMillis());
 	
-	@ManyToOne
-	@JoinColumn(name="id_profissional")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_profissional", referencedColumnName="id_profissional")
 	private modelProfissional id_profissional;
 	
-	@ManyToOne
-	@JoinColumn(name="id_categoria")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_categoria", referencedColumnName="id_categoria")
 	private modelCategoria id_categoria;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_compra", referencedColumnName="idCompra")
+	private ModelCompra idCompra;
 	
 	private int qtd_estoque;
 	
@@ -114,11 +119,17 @@ public class modelProduto {
 	public void setTamanho(String tamanho) {
 		this.tamanho = tamanho;
 	}
-	public String getCategoria() {
-		return categoria;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
+	public String getKeytag() {
+		return keytag;
+	}
+	public void setKeytag(String keytag) {
+		this.keytag = keytag;
 	}
 	public byte[] getImagem1() {
 		return imagem1;
@@ -144,4 +155,13 @@ public class modelProduto {
 	public void setData(Date data) {
 		this.data = data;
 	}
+	public ModelCompra getIdCompra() {
+		return idCompra;
+	}
+	public void setIdCompra(ModelCompra idCompra) {
+		this.idCompra = idCompra;
+	}
+
+		
+	
 }
