@@ -58,7 +58,7 @@ public class UsuarioController {
 		Long idCompra = dto.getIdCompra();
 		ModelCompra compra = compraRepository.findById(idCompra).orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Compra não existente."));
 		modelUsuario usuario = new modelUsuario();
-		usuario.setIdCompra(compra);
+		usuario.setCompra(compra);
 		//usuario.setId_compra(compra);
 		usuario.setId_usuario(dto.getId_usuario());
 		usuario.setNome(dto.getNome());

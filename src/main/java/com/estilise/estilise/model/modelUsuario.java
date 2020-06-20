@@ -143,12 +143,12 @@ public class modelUsuario {
 		this.imagem_usuario = imagem_usuario;
 	}
 
-	public ModelCompra getIdCompra() {
-		return idCompra;
+	public ModelCompra getcompra() {
+		return compra;
 	}
 
-	public void setIdCompra(ModelCompra idCompra) {
-		this.idCompra = idCompra;
+	public void setCompra(ModelCompra compra) {
+		this.compra = compra;
 	}
 
 	
