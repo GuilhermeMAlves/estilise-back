@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
-
-import com.estilise.estilise.model.ModelCompra;
+//import org.springframework.web.server.ResponseStatusException;
+//
+//import com.estilise.estilise.model.ModelCompra;
 import com.estilise.estilise.model.modelLoginUsuario;
 import com.estilise.estilise.model.modelUsuario;
-import com.estilise.estilise.repository.CompraRepository;
+//import com.estilise.estilise.repository.CompraRepository;
 import com.estilise.estilise.repository.UsuarioRepository;
 import com.estilise.estilise.rest.DTO.UsuarioDTO;
 import com.estilise.estilise.service.UsuarioService;
@@ -33,7 +33,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UsuarioController {
 	
-	private final CompraRepository compraRepository;
+//	private final CompraRepository compraRepository;
 	
 	private final UsuarioRepository repository;
 
@@ -56,15 +56,15 @@ public class UsuarioController {
 	@PostMapping("/teste")
 	public modelUsuario salvar(@RequestBody UsuarioDTO dto) {
 		Long idCompra = dto.getIdCompra();
-		ModelCompra compra = compraRepository.findById(idCompra).orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Compra não existente."));
+//		ModelCompra compra = compraRepository.findById(idCompra).orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Compra não existente."));
 		modelUsuario usuario = new modelUsuario();
-		usuario.setCompra(compra);
-		//usuario.setId_compra(compra);
+//		usuario.setCompra(compra);
+//		usuario.setId_compra(compra);
 		usuario.setId_usuario(dto.getId_usuario());
 		usuario.setNome(dto.getNome());
 		usuario.setSenha(dto.getSenha());
 		usuario.setCpf_usuario(dto.getCpf_usuario());
-		usuario.setEmail_usuario(dto.getEmail_usuario());
+		usuario.setEmailusuario(dto.getEmailusuario());
 		usuario.setCep(dto.getCep());
 		usuario.setTelefone(dto.getTelefone());
 		usuario.setNumero_casa(dto.getNumero_casa());
@@ -84,16 +84,14 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
 	}
 	
-	@PutMapping
-	public ResponseEntity<modelUsuario> PutUsuario(@RequestBody modelUsuario usuario){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(usuario));
-	}
-	
-	
-
     @PostMapping("/cadastrar")
     public ResponseEntity<modelUsuario> Post(@RequestBody modelUsuario usuario){
           return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+    }
+    
+    @PutMapping
+    public ResponseEntity<modelUsuario> PutUsuario(@RequestBody modelUsuario usuario){
+    	return ResponseEntity.status(HttpStatus.OK).body(repository.save(usuario));
     }
 	
 	@DeleteMapping("/{id}")

@@ -2,28 +2,25 @@ package com.estilise.estilise.model;
 
 public class modelLoginUsuario {
 
-	private String nome;
-	
-	private String nomeUsuario;
+	private String email_usuario;
 	
 	private String senha;
 	
 	private String token;
-	
-	//private boolean vendedor;
 
-	public String getNome() {
-		return nome;
+
+	public String getEmail_usuario() {
+		return email_usuario;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setEmail_usuario(String email_usuario) {
+		this.email_usuario = email_usuario;
 	}
 
 	public String getSenha() {
 		return senha;
 	}
-
+	
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
@@ -35,21 +32,4 @@ public class modelLoginUsuario {
 	public void setToken(String token) {
 		this.token = token;
 	}
-
-	public String getNomeUsuario() {
-		return nomeUsuario;
-	}
-
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
-	}
-
-	//public boolean isVendedor() {
-		//return vendedor;
-	//}
-
-	//public void setVendedor(boolean vendedor) {
-		//this.vendedor = vendedor;
-	//}
-	
 }

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,31 +26,13 @@ public class ModelCompra {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data_compra= new java.sql.Date(System.currentTimeMillis());
 	
-	
-	
-	
-	
-	
-	
-	
+	@OneToOne
+	@JoinColumn(name="id_usuario")
+	private modelUsuario usuario;
 
-
-
-	public long getIdCompra() {
-		return idCompra;
-	}
-
-	public void setIdCompra(long idCompra) {
-		this.idCompra = idCompra;
-	}
-
-	public Date getData_compra() {
-		return data_compra;
-	}
-
-	public void setData_compra(Date data_compra) {
-		this.data_compra = data_compra;
-	}
+	@OneToOne
+	@JoinColumn(name="id_produto")
+	private modelProduto produto;
 }
 
 

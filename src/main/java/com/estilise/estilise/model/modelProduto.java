@@ -40,6 +40,15 @@ public class modelProduto {
 	private String tamanho;
 	
 	@NotNull
+	private String descricao;
+	
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	@NotNull
 	private String keytag;
 	
 	@NotNull
@@ -58,10 +67,6 @@ public class modelProduto {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="id_categoria", referencedColumnName="id_categoria")
 	private modelCategoria id_categoria;
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_compra", referencedColumnName="idCompra")
-	private ModelCompra idCompra;
 	
 	private int qtd_estoque;
 	
@@ -155,13 +160,4 @@ public class modelProduto {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public ModelCompra getIdCompra() {
-		return idCompra;
-	}
-	public void setIdCompra(ModelCompra idCompra) {
-		this.idCompra = idCompra;
-	}
-
-		
-	
 }

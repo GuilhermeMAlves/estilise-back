@@ -2,16 +2,22 @@ package com.estilise.estilise.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import lombok.Data;
 
 @Entity
 @Table(name="profissional")
+@Data
 public class modelProfissional {
 	
 	@Id
@@ -22,16 +28,19 @@ public class modelProfissional {
 	private String nomeProfissional;
 	
 	@NotNull
-	private String email;
+	@Email
+	private String emailprofissional;
 	
 	@NotNull
-	private String telefone;
+	private String telefone_profissional;
 	
 	@NotNull
+	@Column(name="cpf_cnpj", unique=true, length = 14)
+//	@Size(min=11,max=14)
 	private String cpf_cnpj;
 	
 	@NotNull
-	@Size(min=8,max=20)
+//	@Size(min=8,max=20)
 	private String senha_profissional;
 	
 	@NotNull
@@ -40,7 +49,7 @@ public class modelProfissional {
 	@NotNull
 	private int numero_casa_profissional;
 	
-	private String complemento;
+	private String complemento_profissional;
 	
 	@NotNull
 	private String especialidade;
@@ -49,109 +58,4 @@ public class modelProfissional {
 	private Date data_nascimento;
 	
 	private byte[] imagem_profissional;
-	
-	
-	
-	
-	
-	
-	
-//	--------------Get e Set ------------------
-	
-	public long getId_profissional() {
-		return id_profissional;
-	}
-
-	public void setId_profissional(long id_profissional) {
-		this.id_profissional = id_profissional;
-	}
-
-	public String getNome_profissional() {
-		return nomeProfissional;
-	}
-
-	public void setNome_profissional(String nome_profissional) {
-		this.nomeProfissional = nome_profissional;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getCpf_cnpj() {
-		return cpf_cnpj;
-	}
-
-	public void setCpf_cnpj(String cpf_cnpj) {
-		this.cpf_cnpj = cpf_cnpj;
-	}
-
-	public String getSenha_profissional() {
-		return senha_profissional;
-	}
-
-	public void setSenha_profissional(String senha_profissional) {
-		this.senha_profissional = senha_profissional;
-	}
-
-	public String getCep_profissional() {
-		return cep_profissional;
-	}
-
-	public void setCep_profissional(String cep_profissional) {
-		this.cep_profissional = cep_profissional;
-	}
-
-	public int getNumero_casa_profissional() {
-		return numero_casa_profissional;
-	}
-
-	public void setNumero_casa_profissional(int numero_casa_profissional) {
-		this.numero_casa_profissional = numero_casa_profissional;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
-	public String getEspecialidade() {
-		return especialidade;
-	}
-
-	public void setEspecialidade(String especialidade) {
-		this.especialidade = especialidade;
-	}
-
-	public Date getData_nascimento() {
-		return data_nascimento;
-	}
-
-	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
-	}
-
-	public byte[] getImagem_profissional() {
-		return imagem_profissional;
-	}
-
-	public void setImagem_profissional(byte[] imagem_profissional) {
-		this.imagem_profissional = imagem_profissional;
-	}
-	
 }
