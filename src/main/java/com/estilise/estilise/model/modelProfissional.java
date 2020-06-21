@@ -50,6 +50,14 @@ public class modelProfissional {
 	
 	private byte[] imagem_profissional;
 	
+	
+	
+	
+	
+	
+	
+//	--------------Get e Set ------------------
+	
 	public long getId_profissional() {
 		return id_profissional;
 	}
