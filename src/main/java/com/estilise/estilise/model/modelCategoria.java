@@ -26,11 +26,11 @@ public class modelCategoria {
 	private String descricao;
 	
 	@NotNull
-	private byte[] imagem_categoria;
+	private String imagem_categoria;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_produto", referencedColumnName="id_produto")
-	private modelProduto id_produto;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name="id_produto", referencedColumnName="id_produto")
+//	private modelProduto id_produto;
 	
 	public long getId_categoria() {
 		return id_categoria;
@@ -56,20 +56,20 @@ public class modelCategoria {
 		this.descricao = descricao;
 	}
 
-	public byte[] getImagem_categoria() {
+	public String getImagem_categoria() {
 		return imagem_categoria;
 	}
 
-	public void setImagem_categoria(byte[] imagem_categoria) {
+	public void setImagem_categoria(String imagem_categoria) {
 		this.imagem_categoria = imagem_categoria;
 	}
 
-	public modelProduto getId_produto() {
-		return id_produto;
-	}
-
-	public void setId_produto(modelProduto id_produto) {
-		this.id_produto = id_produto;
-	}
+//	public modelProduto getId_produto() {
+//		return id_produto;
+//	}
+//
+//	public void setId_produto(modelProduto id_produto) {
+//		this.id_produto = id_produto;
+//	}
 
 }
