@@ -61,8 +61,8 @@ public class modelProduto {
 	private Date data= new java.sql.Date(System.currentTimeMillis());
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_profissional", referencedColumnName="id_profissional")
-	private modelProfissional id_profissional;
+	@JoinColumn(name="id_usuario", referencedColumnName="id_usuario")
+	private modelUsuario id_usuario;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="id_categoria", referencedColumnName="id_categoria")
@@ -70,11 +70,11 @@ public class modelProduto {
 	
 	private int qtd_estoque;
 	
-	public modelProfissional getId_profissional() {
-		return id_profissional;
+	public modelUsuario getId_profissional() {
+		return id_usuario;
 	}
-	public void setId_profissional(modelProfissional id_profissional) {
-		this.id_profissional = id_profissional;
+	public void setId_profissional(modelUsuario id_usuario) {
+		this.id_usuario = id_usuario;
 	}
 	public modelCategoria getId_categoria() {
 		return id_categoria;

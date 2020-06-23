@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.estilise.estilise.model.modelProfissional;
 import com.estilise.estilise.model.modelUsuario;
 
 public class DetailsImpl implements UserDetails {
@@ -18,11 +17,6 @@ public class DetailsImpl implements UserDetails {
 	public DetailsImpl(modelUsuario user) {
 		this.userName = user.getNome();
 		this.password = user.getSenha();
-	}
-	
-	public DetailsImpl(modelProfissional pro) {
-		this.userName = pro.getNomeProfissional();
-		this.password = pro.getSenha_profissional();
 	}
 	
 	public DetailsImpl() {
