@@ -1,5 +1,8 @@
 package com.estilise.estilise.model;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,9 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.UniqueElements;
 
 import lombok.Data;
 
@@ -29,8 +29,9 @@ public class modelUsuario {
 //	@Size(min=5, max = 100)
 	private String senha;
 	
-	@Size(min=11,max=11)
-	@UniqueElements
+	@NotNull
+//	@Size(min=11,max=11)
+	@Column(name="cpf_usuario", unique=true, length = 11)
 	private String cpf_usuario;
 	
 	@NotNull
@@ -45,7 +46,13 @@ public class modelUsuario {
 	private String complemento;
 	
 	private String cartao_credito;
-	private byte[] imagem_usuario;	
+	private String imagem_usuario;
+	
+	//------------------ profissional
+	private String especialidade;
+	private Date data_nascimento;
+	private boolean profissional;
+	
 }
 	
 

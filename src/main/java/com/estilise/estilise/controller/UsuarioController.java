@@ -53,7 +53,7 @@ public class UsuarioController {
 		return repository.findById(id).map(resp->ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
-	@PostMapping("/teste")
+	@PostMapping("/dto")
 	public modelUsuario salvar(@RequestBody UsuarioDTO dto) {
 		Long idCompra = dto.getIdCompra();
 //		ModelCompra compra = compraRepository.findById(idCompra).orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Compra não existente."));
@@ -71,6 +71,9 @@ public class UsuarioController {
 		usuario.setComplemento(dto.getComplemento());
 		usuario.setCartao_credito(dto.getCartao_credito());
 		usuario.setImagem_usuario(dto.getImagem_usuario());
+		usuario.setEspecialidade(dto.getEspecialidade());
+		usuario.setData_nascimento(dto.getData_nascimento());
+		usuario.setProfissional(dto.isProfissional());
 		return repository.save(usuario);
 	}
 	

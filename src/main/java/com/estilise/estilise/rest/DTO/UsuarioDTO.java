@@ -1,5 +1,7 @@
 package com.estilise.estilise.rest.DTO;
 
+import java.util.Date;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,8 +29,15 @@ public class UsuarioDTO {
 	
 	private String cartao_credito;
 	
-	private byte[] imagem_usuario;
+	private String imagem_usuario;
 	
 	private Long idCompra;
+	
+	//--------------- profissional
+	private String especialidade;
+	
+	private Date data_nascimento;
+	
+	private boolean profissional;
 
 }
