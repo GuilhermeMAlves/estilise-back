@@ -1,35 +1,18 @@
 package com.estilise.estilise.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class modelLoginUsuario {
 
-	private String email_usuario;
+	private String emailusuario;
 	
 	private String senha;
 	
 	private String token;
 
 
-	public String getEmail_usuario() {
-		return email_usuario;
-	}
-
-	public void setEmail_usuario(String email_usuario) {
-		this.email_usuario = email_usuario;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
 	
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 }

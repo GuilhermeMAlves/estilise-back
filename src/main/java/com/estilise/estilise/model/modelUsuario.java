@@ -29,7 +29,7 @@ public class modelUsuario {
 //	@Size(min=5, max = 100)
 	private String senha;
 	
-	@NotNull
+//	@NotNull
 //	@Size(min=11,max=11)
 	@Column(name="cpf_usuario", unique=true, length = 11)
 	private String cpf_usuario;
@@ -38,7 +38,7 @@ public class modelUsuario {
 	@Email
 	private String emailusuario;
 	
-	@NotNull
+//	@NotNull
 	private String cep;
 	
 	private String telefone;
