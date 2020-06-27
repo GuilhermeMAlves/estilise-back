@@ -39,7 +39,6 @@ public class modelUsuario {
 	@Email
 	public String emailusuario;
 	
-
 //	@NotNull
 	private String cep;
 	
@@ -58,8 +57,6 @@ public class modelUsuario {
 		// TODO Auto-generated method stub
 		
 	}
-
-
 
 }
 	
