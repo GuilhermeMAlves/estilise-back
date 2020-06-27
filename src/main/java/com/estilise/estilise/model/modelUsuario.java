@@ -18,6 +18,7 @@ import lombok.Data;
 @Data
 public class modelUsuario {
 	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id_usuario;
@@ -36,10 +37,10 @@ public class modelUsuario {
 	
 	@NotNull
 	@Email
-	private String emailusuario;
+	public String emailusuario;
 	
 	@NotNull
-	private String cep;
+	public String cep;
 	
 	private String telefone;
 	private int numero_casa;
@@ -52,7 +53,13 @@ public class modelUsuario {
 	private String especialidade;
 	private Date data_nascimento;
 	private boolean profissional;
-	
+	public void getCep(String cep2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 }
 	
 

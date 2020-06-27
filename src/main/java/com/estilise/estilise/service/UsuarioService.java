@@ -27,17 +27,28 @@ public class UsuarioService {
 	
 	public Optional<modelLoginUsuario> Logar(Optional<modelLoginUsuario> user) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<modelUsuario> usuario = repository.findByEmailusuario(user.get().getEmail_usuario());
+		Optional<modelUsuario> usuario = repository.findByEmailusuario(user.get().getEmailusuario());
 		if(usuario.isPresent()) {
 			if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
-				String auth = user.get().getEmail_usuario()+ ":" +user.get().getSenha();
+				String auth = user.get().getEmailusuario()+ ":" +user.get().getSenha();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader ="Basic " + new String(encodedAuth);
 				user.get().setToken(authHeader);
-				user.get().setEmail_usuario(usuario.get().getNome());
+				user.get().setEmailusuario(usuario.get().getEmailusuario());
 				return user;
 			}
 		}
 		return null;
 	}
 }
+
+//user.get().setEmailusuario(usuario.get().getEmailusuario());
+//user.get().setNome(usuario.get().getNome());
+//user.get().setCpf_usuario(usuario.get().getCpf_usuario());
+//user.get().setData_nascimento(usuario.get().getData_nascimento());
+//user.get().setCep(usuario.get().getCep());
+//user.get().setTelefone(usuario.get().getTelefone());
+//user.get().setImagem_usuario(usuario.get().getImagem_usuario());
+//user.get().setCartao_credito(usuario.get().getCartao_credito());
+//user.get().setId_usuario(usuario.get().getId_usuario());
+//user.get().setComplemento(usuario.get().getComplemento());

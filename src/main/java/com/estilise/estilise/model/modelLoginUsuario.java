@@ -2,19 +2,19 @@ package com.estilise.estilise.model;
 
 public class modelLoginUsuario {
 
-	private String email_usuario;
+	private String emailusuario;
 	
 	private String senha;
 	
 	private String token;
 
 
-	public String getEmail_usuario() {
-		return email_usuario;
+	public String getEmailusuario() {
+		return emailusuario;
 	}
 
-	public void setEmail_usuario(String email_usuario) {
-		this.email_usuario = email_usuario;
+	public void setEmailusuario(String emailusuario) {
+		this.emailusuario = emailusuario;
 	}
 
 	public String getSenha() {
