@@ -1,5 +1,10 @@
 package com.estilise.estilise.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class modelLoginUsuario {
 
 	private String emailusuario;
@@ -7,7 +12,6 @@ public class modelLoginUsuario {
 	private String senha;
 	
 	private String token;
-
 
 	public String getEmailusuario() {
 		return emailusuario;
@@ -19,17 +23,5 @@ public class modelLoginUsuario {
 
 	public String getSenha() {
 		return senha;
-	}
-	
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
 	}
 }
