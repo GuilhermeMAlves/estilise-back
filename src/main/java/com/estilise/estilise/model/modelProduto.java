@@ -26,33 +26,33 @@ public class modelProduto {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id_produto;
 	
-	@NotNull
-	@Size(min=3,max=20)
+//	@NotNull
+//	@Size(min=3,max=20)
 	private String nomeProduto;
 	
-	@NotNull
+//	@NotNull
 	private String material;
 	
-	@NotNull
+//	@NotNull
 	private String cor;
 	
-	@NotNull
+//	@NotNull
 	private float preco;
 	
-	@NotNull
+//	@NotNull
 	private String tamanho;
 	
-	@NotNull
+//	@NotNull
 	private String descricao;
 	
-	@NotNull
+//	@NotNull
 	private String keytag;
 	
-	@NotNull
-	private byte[] imagem1;
+//	@NotNull
+	private String imagem1;
 	
-	private byte[] imagem2;
-	private byte[] imagem3;
+	private String imagem2;
+	private String imagem3;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data= new java.sql.Date(System.currentTimeMillis());

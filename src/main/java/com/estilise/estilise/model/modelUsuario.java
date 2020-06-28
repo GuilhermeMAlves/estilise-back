@@ -45,7 +45,7 @@ public class modelUsuario {
 	private String telefone;
 	private int numero_casa;
 	private String complemento;
-	
+	private String descricaoUsuario;
 	private String cartao_credito;
 	private String imagem_usuario;
 	

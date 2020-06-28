@@ -52,6 +52,10 @@ public class UsuarioController {
 	public ResponseEntity<modelUsuario>GetById(@PathVariable long id){
 		return repository.findById(id).map(resp->ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
+	@GetMapping("/profissional/{profissional}")
+	public ResponseEntity<List<modelUsuario>>GetAllProfissional(@PathVariable boolean profissional){
+		return ResponseEntity.ok(repository.findAllByProfissional(profissional));	
+	}
 	
 	@PostMapping("/dto")
 	public modelUsuario salvar(@RequestBody UsuarioDTO dto) {
