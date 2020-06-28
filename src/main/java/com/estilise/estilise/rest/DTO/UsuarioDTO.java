@@ -38,6 +38,6 @@ public class UsuarioDTO {
 	
 	private Date data_nascimento;
 	
-	private boolean profissional;
+	private String profissional;
 
 }

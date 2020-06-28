@@ -51,7 +51,7 @@ public class modelUsuario {
 	//------------------ profissional
 	private String especialidade;
 	private Date data_nascimento;
-	private boolean profissional;
+	private String profissional;
 	
 }
 	

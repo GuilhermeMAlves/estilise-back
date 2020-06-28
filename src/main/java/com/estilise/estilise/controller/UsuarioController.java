@@ -73,7 +73,7 @@ public class UsuarioController {
 		usuario.setImagem_usuario(dto.getImagem_usuario());
 		usuario.setEspecialidade(dto.getEspecialidade());
 		usuario.setData_nascimento(dto.getData_nascimento());
-		usuario.setProfissional(dto.isProfissional());
+		usuario.setProfissional(dto.getProfissional());
 		return repository.save(usuario);
 	}
 	
