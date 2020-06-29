@@ -52,6 +52,10 @@ public class UsuarioController {
 	public ResponseEntity<modelUsuario>GetById(@PathVariable long id){
 		return repository.findById(id).map(resp->ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
+	@GetMapping("/profissional/{profissional}")
+	public ResponseEntity<List<modelUsuario>>GetAllProfissional(@PathVariable boolean profissional){
+		return ResponseEntity.ok(repository.findAllByProfissional(profissional));	
+	}
 	
 	@PostMapping("/dto")
 	public modelUsuario salvar(@RequestBody UsuarioDTO dto) {
@@ -60,19 +64,19 @@ public class UsuarioController {
 		modelUsuario usuario = new modelUsuario();
 //		usuario.setCompra(compra);
 //		usuario.setId_compra(compra);
-		usuario.setId_usuario(dto.getId_usuario());
+		usuario.setIdusuario(dto.getIdusuario());
 		usuario.setNome(dto.getNome());
 		usuario.setSenha(dto.getSenha());
-		usuario.setCpf_usuario(dto.getCpf_usuario());
+		usuario.setCpfusuario(dto.getCpfusuario());
 		usuario.setEmailusuario(dto.getEmailusuario());
 		usuario.setCep(dto.getCep());
 		usuario.setTelefone(dto.getTelefone());
-		usuario.setNumero_casa(dto.getNumero_casa());
+		usuario.setNumerocasa(dto.getNumerocasa());
 		usuario.setComplemento(dto.getComplemento());
-		usuario.setCartao_credito(dto.getCartao_credito());
-		usuario.setImagem_usuario(dto.getImagem_usuario());
+		usuario.setCartaocredito(dto.getCartaocredito());
+		usuario.setImagemusuario(dto.getImagemusuario());
 		usuario.setEspecialidade(dto.getEspecialidade());
-		usuario.setData_nascimento(dto.getData_nascimento());
+		usuario.setDatanascimento(dto.getDatanascimento());
 		usuario.setProfissional(dto.getProfissional());
 		return repository.save(usuario);
 	}

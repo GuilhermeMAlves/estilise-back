@@ -11,5 +11,9 @@ import com.estilise.estilise.model.modelUsuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<modelUsuario, Long> {
 	public List<modelUsuario> findAllByEmailusuario(String emailusuario);
+	public List<modelUsuario> findAllByIdusuario (Long idusuario);
+	
 	public Optional<modelUsuario> findByEmailusuario(String emailusuario);
+	public List<modelUsuario> findAllByProfissional(boolean profissional);
+
 }
