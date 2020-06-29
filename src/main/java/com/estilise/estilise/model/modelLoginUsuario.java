@@ -8,27 +8,22 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class modelLoginUsuario {
-	
-	private long id_usuario;
+
+	private long idusuario;
 	private String emailusuario;
-	private String cpf_usuario;
+	private String cpfusuario;
 	private String senha;
 	private String nome;
-	
 	private String cep;
 	private String telefone;
-	private int numero_casa;
+	private int numerocasa;
 	private String complemento;
-	private String cartao_credito;
-	private String imagem_usuario;
+	private String cartaocredito;
+	private String imagemusuario;
 	private String especialidade;
-	private Date data_nascimento;
-	private boolean profissional;
+	private Date datanascimento;
+	private String profissional;
 	
 	private String token;
 
-
-	public String getSenha() {
-		return senha;
-	}
 }

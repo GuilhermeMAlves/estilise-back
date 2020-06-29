@@ -36,7 +36,7 @@ public class UsuarioService {
 	}
 	
 	public modelProduto CadastrarProduto(modelProduto produto) {
-		produto.setId_produto(produto.getId_produto());
+		produto.setIdproduto(produto.getIdproduto());
 		produto.setNomeProduto(produto.getNomeProduto());
 		produto.setMaterial(produto.getMaterial());
 		produto.setCor(produto.getCor());
@@ -47,16 +47,16 @@ public class UsuarioService {
 		produto.setImagem2(produto.getImagem1());
 		produto.setImagem3(produto.getImagem1());
 		produto.setData(produto.getData());
-		produto.setId_usuario(produto.getId_usuario());
-		produto.setId_categoria(produto.getId_categoria());
+		produto.setIdusuarios(produto.getIdusuarios());
+		produto.setIdcategorias(produto.getIdcategorias());
 		return produtorepository.save(produto);
 	}
 	
 	public modelCategoria CadastrarCategoria(modelCategoria categoria) {
-		categoria.setId_categoria(categoria.getId_categoria());
+		categoria.setIdcategoria(categoria.getIdcategoria());
 		categoria.setDescricao(categoria.getDescricao());
-		categoria.setImagem_categoria(categoria.getImagem_categoria());
-		categoria.setNome_categoria(categoria.getNome_categoria());
+		categoria.setImagemcategoria(categoria.getImagemcategoria());
+		categoria.setNomecategoria(categoria.getNomecategoria());
 		return categoriarepository.save(categoria);
 	}
 	
@@ -70,15 +70,17 @@ public class UsuarioService {
 				String authHeader ="Basic " + new String(encodedAuth);
 				user.get().setToken(authHeader);
 				user.get().setEmailusuario(usuario.get().getEmailusuario());
-				user.get().setCpf_usuario(usuario.get().getCpf_usuario());
+				user.get().setCpfusuario(usuario.get().getCpfusuario());
 				user.get().setNome(usuario.get().getNome());
-				user.get().setData_nascimento(usuario.get().getData_nascimento());
+				user.get().setDatanascimento(usuario.get().getDatanascimento());
 				user.get().setCep(usuario.get().getCep());
 				user.get().setTelefone(usuario.get().getTelefone());
-				user.get().setImagem_usuario(usuario.get().getImagem_usuario());
-				user.get().setCartao_credito(usuario.get().getCartao_credito());
+				user.get().setImagemusuario(usuario.get().getImagemusuario());
+				user.get().setCartaocredito(usuario.get().getCartaocredito());
 				user.get().setComplemento(usuario.get().getComplemento());
-				user.get().setId_usuario(usuario.get().getId_usuario());
+				user.get().setEspecialidade(usuario.get().getEspecialidade());
+				user.get().setProfissional(usuario.get().getProfissional());
+				user.get().setIdusuario(usuario.get().getIdusuario());
 				return user;
 			}
 		}

@@ -2,7 +2,6 @@ package com.estilise.estilise.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -24,7 +21,7 @@ public class modelProduto {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id_produto;
+	private long idproduto;
 	
 //	@NotNull
 //	@Size(min=3,max=20)
@@ -57,14 +54,14 @@ public class modelProduto {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data= new java.sql.Date(System.currentTimeMillis());
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_usuario", referencedColumnName="id_usuario")
-	private modelUsuario id_usuario;
+	@ManyToOne
+	@JoinColumn(name="idusuario")
+	private modelUsuario idusuarios;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_categoria", referencedColumnName="id_categoria")
-	private modelCategoria id_categoria;
+	@ManyToOne
+	@JoinColumn(name="idcategoria")
+	private modelCategoria idcategorias;
 	
-	private int qtd_estoque;
+	private int qtdestoque;
 	
 }

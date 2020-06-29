@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UsuarioDTO {
 
-	private long id_usuario;
+	private long idusuario;
 
 	private String nome;
 
 	private String senha;
 
-	private String cpf_usuario;
+	private String cpfusuario;
 	
 	private String emailusuario;
 
@@ -23,21 +23,21 @@ public class UsuarioDTO {
 	
 	private String telefone;
 	
-	private int numero_casa;
+	private int numerocasa;
 	
 	private String complemento;
 	
-	private String cartao_credito;
+	private String cartaocredito;
 	
-	private String imagem_usuario;
+	private String imagemusuario;
 	
 	private Long idCompra;
 	
 	//--------------- profissional
 	private String especialidade;
 	
-	private Date data_nascimento;
+	private Date datanascimento;
 	
-	private boolean profissional;
+	private String profissional;
 
 }

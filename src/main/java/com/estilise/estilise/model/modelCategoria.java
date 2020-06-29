@@ -17,15 +17,15 @@ public class modelCategoria {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id_categoria;
+	private long idcategoria;
 	
 	@NotNull
-	private String nome_categoria;
+	private String nomecategoria;
 	
 	@NotNull
 	private String descricao;
 	
 	@NotNull
-	private String imagem_categoria;
+	private String imagemcategoria;
 
 }

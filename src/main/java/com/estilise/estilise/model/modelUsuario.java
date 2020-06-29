@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -21,8 +20,8 @@ public class modelUsuario {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id_usuario;
-	
+	private long idusuario;
+
 //	@NotNull
 	private String nome;
 
@@ -33,7 +32,7 @@ public class modelUsuario {
 //	@NotNull
 //	@Size(min=11,max=11)
 	@Column(name="cpf_usuario", unique=true, length = 11)
-	private String cpf_usuario;
+	private String cpfusuario;
 	
 //	@NotNull
 	@Email
@@ -43,21 +42,18 @@ public class modelUsuario {
 	private String cep;
 	
 	private String telefone;
-	private int numero_casa;
+	private int numerocasa;
 	private String complemento;
 	private String descricaoUsuario;
-	private String cartao_credito;
-	private String imagem_usuario;
+	private String cartaocredito;
+	private String imagemusuario;
 	
 	//------------------ profissional
 	private String especialidade;
-	private Date data_nascimento;
-	private boolean profissional;
-	public void getCep(String cep2) {
-		// TODO Auto-generated method stub
-		
-	}
+	private Date datanascimento;
 
+	private String profissional;
+	
 }
 	
 
