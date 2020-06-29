@@ -43,7 +43,7 @@ public class ProdutoController {
 	
 	@PostMapping("/produtoTeste")
 	public modelProduto salvar(@RequestBody ProdutoDTO dto) {
-		Long idusuario = dto.getIdusuario();	
+		Long idusuario = dto.getIdusuario();
 		Long idcategoria = dto.getIdcategoria();
 		
 		modelUsuario usuario = 
@@ -54,8 +54,8 @@ public class ProdutoController {
 				new ResponseStatusException(HttpStatus.BAD_REQUEST, "Categoria Inexistente."));
 		
 		modelProduto produto = new modelProduto();
-		produto.setIdusuario(usuario);
-		produto.setIdcategoria(categoria);
+		produto.setIdusuarios(usuario);
+		produto.setIdcategorias(categoria);
 		produto.setIdproduto(dto.getIdproduto());
 		produto.setCor(dto.getCor());
 		produto.setData(dto.getData());

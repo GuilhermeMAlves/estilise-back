@@ -47,8 +47,8 @@ public class UsuarioService {
 		produto.setImagem2(produto.getImagem1());
 		produto.setImagem3(produto.getImagem1());
 		produto.setData(produto.getData());
-		produto.setIdusuario(produto.getIdusuario());
-		produto.setIdcategoria(produto.getIdcategoria());
+		produto.setIdusuarios(produto.getIdusuarios());
+		produto.setIdcategorias(produto.getIdcategorias());
 		return produtorepository.save(produto);
 	}
 	

@@ -2,9 +2,6 @@ package com.estilise.estilise.rest.DTO;
 
 import java.util.Date;
 
-import com.estilise.estilise.model.modelCategoria;
-import com.estilise.estilise.model.modelUsuario;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,7 +20,7 @@ public class ProdutoDTO {
 	private String imagem1;
 	private String imagem2;
 	private String imagem3;
-	private Date data= new java.sql.Date(System.currentTimeMillis());
+	private Date data;
 	private Long idusuario;
 	private Long idcategoria;
 	private int qtdestoque;

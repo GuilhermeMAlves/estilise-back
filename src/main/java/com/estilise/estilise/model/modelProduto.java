@@ -56,11 +56,11 @@ public class modelProduto {
 	
 	@ManyToOne
 	@JoinColumn(name="idusuario")
-	private modelUsuario idusuario;
+	private modelUsuario idusuarios;
 	
 	@ManyToOne
 	@JoinColumn(name="idcategoria")
-	private modelCategoria idcategoria;
+	private modelCategoria idcategorias;
 	
 	private int qtdestoque;
 	
