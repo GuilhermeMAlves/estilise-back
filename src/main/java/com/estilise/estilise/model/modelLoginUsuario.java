@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class modelLoginUsuario {
-
+	
+	private long id_usuario;
 	private String emailusuario;
 	private String cpf_usuario;
 	private String senha;

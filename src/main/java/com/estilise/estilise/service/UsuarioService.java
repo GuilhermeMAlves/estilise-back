@@ -78,6 +78,7 @@ public class UsuarioService {
 				user.get().setImagem_usuario(usuario.get().getImagem_usuario());
 				user.get().setCartao_credito(usuario.get().getCartao_credito());
 				user.get().setComplemento(usuario.get().getComplemento());
+				user.get().setId_usuario(usuario.get().getId_usuario());
 				return user;
 			}
 		}
