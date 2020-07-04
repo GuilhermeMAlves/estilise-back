@@ -14,6 +14,6 @@ public interface UsuarioRepository extends JpaRepository<modelUsuario, Long> {
 	public List<modelUsuario> findAllByIdusuario (Long idusuario);
 	
 	public Optional<modelUsuario> findByEmailusuario(String emailusuario);
-	public List<modelUsuario> findAllByProfissional(boolean profissional);
-
+	public List<modelUsuario> findAllByProfissional(String profissional);
+	
 }

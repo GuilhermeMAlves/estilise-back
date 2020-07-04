@@ -54,8 +54,6 @@ public class ProdutoController {
 				new ResponseStatusException(HttpStatus.BAD_REQUEST, "Categoria Inexistente."));
 		
 		modelProduto produto = new modelProduto();
-		produto.setIdusuarios(usuario);
-		produto.setIdcategorias(categoria);
 		produto.setIdproduto(dto.getIdproduto());
 		produto.setCor(dto.getCor());
 		produto.setData(dto.getData());
@@ -72,7 +70,18 @@ public class ProdutoController {
 		
 		return produtoRepository.save(produto);
 	}
-	
+	@GetMapping("/carrinho/{carrinho}")
+	public ResponseEntity<List<modelProduto>>GetAllCarrinho(@PathVariable String carrinho){
+		return ResponseEntity.ok(repository.findAllByCarrinho(carrinho));	
+	}
+	@GetMapping("/idusuario/{idUsuario}")
+	public ResponseEntity<List<modelProduto>>GetAllIdUsuario(@PathVariable float idUsuario){
+		return ResponseEntity.ok(repository.findAllByIdUsuario(idUsuario));	
+	}
+	@GetMapping("/categoria/{categoria}")
+	public ResponseEntity<List<modelProduto>>GetAllCategoria(@PathVariable String categoria){
+		return ResponseEntity.ok(repository.findAllByCategoria(categoria));	
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<modelProduto>>GetAllProduto(){

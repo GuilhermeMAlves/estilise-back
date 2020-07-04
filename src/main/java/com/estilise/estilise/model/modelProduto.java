@@ -54,13 +54,21 @@ public class modelProduto {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data= new java.sql.Date(System.currentTimeMillis());
 	
-	@ManyToOne
-	@JoinColumn(name="idusuario")
-	private modelUsuario idusuarios;
+//	@ManyToOne
+//	@JoinColumn(name="idusuario")
+//	private modelUsuario idusuarios;
+//	
+//	@ManyToOne
+//	@JoinColumn(name="idcategoria")
+//	private modelCategoria idcategorias;
 	
-	@ManyToOne
-	@JoinColumn(name="idcategoria")
-	private modelCategoria idcategorias;
+	private String carrinho;
+	
+	private String nomeUsuario;
+	
+	private float idUsuario;
+	
+	private String categoria;
 	
 	private int qtdestoque;
 	
