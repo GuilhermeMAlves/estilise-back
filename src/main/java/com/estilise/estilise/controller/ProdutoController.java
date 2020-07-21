@@ -80,7 +80,7 @@ public class ProdutoController {
 	}
 	@GetMapping("/categoria/{categoria}")
 	public ResponseEntity<List<modelProduto>>GetAllCategoria(@PathVariable String categoria){
-		return ResponseEntity.ok(repository.findAllByCategoria(categoria));	
+		return ResponseEntity.ok(repository.findAllByCategoriaContainingIgnoreCase(categoria));	
 	}
 	
 	@GetMapping

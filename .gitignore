@@ -30,3 +30,6 @@ build/
 ### VS Code ###
 .vscode/
 /bin/
+
+# Local Netlify folder
+.netlify
